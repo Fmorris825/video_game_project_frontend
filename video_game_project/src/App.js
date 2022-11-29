@@ -40,92 +40,102 @@ function App() {
   let globalSalesX360 = 0;
   let globalSalesXB = 0;
   let globalSalesXOne = 0;
+  let globalSalesTG16 = 0;
+  let globalSalesSCD = 0;
+  let globalSalesWS = 0;
+  let globalSalesNG = 0;
 
-  function getGlobalSalesByPlatform(){
-  for(let i=0; i < allGames.length; i++){
-    console.log(`${allGames[i].name} for the ${allGames[i].platform}`)
-    if(allGames[i].platform === "2600"){
-      globalSales2600 += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "3DS"){
-      globalSales3DS += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "DC"){
-      globalSalesDC += allGames[i].globalsales
-      console.log(`globalSalesDC added ${allGames[i].name} for the ${allGames[i].platform} @ ${allGames[i].globalsales} and now equals ${globalSalesDC}////////////////////////////`)
-    }
-    else if(allGames[i].platform === "DS"){
-      globalSalesDS += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "GB"){
-      globalSalesGB += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "GBA"){
-      globalSalesGBA += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "GC"){
-      globalSalesGC += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "GEN"){
-      globalSalesGEN += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "N64"){
-      globalSalesN64 += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "NES"){
-      globalSalesNES += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "PC"){
-      globalSalesPC += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "PS"){
-      globalSalesPS += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "PS2"){
-      globalSalesPS2 += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "PS3"){
-      globalSalesPS3 += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "PS4"){
-      globalSalesPS4 += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "PSP"){
-      globalSalesPSP += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "PSV"){
-      globalSalesPSV += allGames[i].globalsales
-      // console.log(`globalSalesPSV added ${allGames[i].name} @ ${allGames[i].globalsales} and now equals ${globalSalesPSV}`)
-    }
-    else if(allGames[i].platform === "SAT"){
-      globalSalesSAT += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "SNES"){
-      globalSalesSNES += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "Wii"){
-      globalSalesWii += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "WiiU"){
-      globalSalesWiiU += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "X360"){
-      globalSalesX360 += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "XB"){
-      globalSalesXB += allGames[i].globalsales
-    }
-    else if(allGames[i].platform === "XOne"){
-      globalSalesXOne += allGames[i].globalsales
+  function getGlobalSalesByPlatform() {
+    for (let i = 0; i < allGames.length; i++) {
+      if (allGames[i].platform === "2600") {
+        globalSales2600 += allGames[i].globalsales;
+      } else if (allGames[i].platform === "3DS") {
+        globalSales3DS += allGames[i].globalsales;
+      } else if (allGames[i].platform === "DC") {
+        globalSalesDC += allGames[i].globalsales;
+      } else if (allGames[i].platform === "DS") {
+        globalSalesDS += allGames[i].globalsales;
+      } else if (allGames[i].platform === "GB") {
+        globalSalesGB += allGames[i].globalsales;
+      } else if (allGames[i].platform === "GBA") {
+        globalSalesGBA += allGames[i].globalsales;
+      } else if (allGames[i].platform === "GC") {
+        globalSalesGC += allGames[i].globalsales;
+      } else if (allGames[i].platform === "GEN") {
+        globalSalesGEN += allGames[i].globalsales;
+      } else if (allGames[i].platform === "N64") {
+        globalSalesN64 += allGames[i].globalsales;
+      } else if (allGames[i].platform === "NES") {
+        globalSalesNES += allGames[i].globalsales;
+      } else if (allGames[i].platform === "PC") {
+        globalSalesPC += allGames[i].globalsales;
+      } else if (allGames[i].platform === "PS") {
+        globalSalesPS += allGames[i].globalsales;
+      } else if (allGames[i].platform === "PS2") {
+        globalSalesPS2 += allGames[i].globalsales;
+      } else if (allGames[i].platform === "PS3") {
+        globalSalesPS3 += allGames[i].globalsales;
+      } else if (allGames[i].platform === "PS4") {
+        globalSalesPS4 += allGames[i].globalsales;
+      } else if (allGames[i].platform === "PSP") {
+        globalSalesPSP += allGames[i].globalsales;
+      } else if (allGames[i].platform === "PSV") {
+        globalSalesPSV += allGames[i].globalsales;
+      } else if (allGames[i].platform === "SAT") {
+        globalSalesSAT += allGames[i].globalsales;
+      } else if (allGames[i].platform === "SNES") {
+        globalSalesSNES += allGames[i].globalsales;
+      } else if (allGames[i].platform === "Wii") {
+        globalSalesWii += allGames[i].globalsales;
+      } else if (allGames[i].platform === "WiiU") {
+        globalSalesWiiU += allGames[i].globalsales;
+      } else if (allGames[i].platform === "X360") {
+        globalSalesX360 += allGames[i].globalsales;
+      } else if (allGames[i].platform === "XB") {
+        globalSalesXB += allGames[i].globalsales;
+      } else if (allGames[i].platform === "XOne") {
+        globalSalesXOne += allGames[i].globalsales;
+      } else if (allGames[i].platform === "TG16") {
+        globalSalesTG16 += allGames[i].globalsales;
+      } else if (allGames[i].platform === "SCD") {
+        globalSalesSCD += allGames[i].globalsales;
+      } else if (allGames[i].platform === "WS") {
+        globalSalesWS += allGames[i].globalsales;
+      } else if (allGames[i].platform === "NG") {
+        globalSalesNG += allGames[i].globalsales;
+      }
     }
   }
-}
 
-  getGlobalSalesByPlatform()
-  console.log(`DC global sales = ${globalSalesDC}`)
-  // console.log(allGames[0].platform)
-
-
+  getGlobalSalesByPlatform();
+  console.log(`2600:${globalSales2600}`);
+  console.log(`3DS:${globalSales3DS}`);
+  console.log(`DC:${globalSalesDC}`);
+  console.log(`DS:${globalSalesDS}`);
+  console.log(`GB:${globalSalesGB}`);
+  console.log(`GBA:${globalSalesGBA}`);
+  console.log(`GC:${globalSalesGC}`);
+  console.log(`GEN:${globalSalesGEN}`);
+  console.log(`N64:${globalSalesN64}`);
+  console.log(`NES:${globalSalesNES}`);
+  console.log(`PC:${globalSalesPC}`);
+  console.log(`PS:${globalSalesPS}`);
+  console.log(`PS2:${globalSalesPS2}`);
+  console.log(`PS3:${globalSalesPS3}`);
+  console.log(`PS4:${globalSalesPS4}`);
+  console.log(`PSP:${globalSalesPSP}`);
+  console.log(`PSV:${globalSalesPSV}`);
+  console.log(`SAT:${globalSalesSAT}`);
+  console.log(`SNES:${globalSalesSNES}`);
+  console.log(`Wii:${globalSalesWii}`);
+  console.log(`WiiU:${globalSalesWiiU}`);
+  console.log(`X360:${globalSalesX360}`);
+  console.log(`XB:${globalSalesXB}`);
+  console.log(`XOne:${globalSalesXOne}`);
+  console.log(`TG16:${globalSalesTG16}`);
+  console.log(`SCD:${globalSalesSCD}`);
+  console.log(`WS:${globalSalesWS}`);
+  console.log(`NG:${globalSalesNG}`);
 
   return (
     <div>
