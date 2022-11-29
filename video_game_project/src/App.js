@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import Chart from "react-google-charts";
 
 function App() {
+  const [allGames, setAllGames] = useState([]);
+
+  useEffect(() => {
+    getAllGames();
+  }, []);
+
+  async function getAllGames() {
+    const response = await axios.get("http://localhost:8080/all");
+    setAllGames(response.data);
+  }
+  console.log(allGames);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Chart
+        chartType="LineChart"
+        data={[
+          ["Year", "Global Sales"],
+          allGames.map((game, index) => {
+            return [game.year, game.globalsales];
+          }),
+        ]}
+        width="400px"
+        height="400px"
+        options={{ legend: { position: "bottom" } }}
+        legendToggle
+      /> */}
+      {allGames.filter((game, index) => {
+        return;
+      })}
     </div>
   );
 }
