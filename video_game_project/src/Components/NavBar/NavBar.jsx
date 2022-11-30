@@ -2,7 +2,7 @@ import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SearchBar from "../SearchBar/SearchBar";
 
-const NavBar = ({ setQuery }) => {
+const NavBar = ({ setQuery, setAllGames }) => {
   return (
     <Navbar bg="primary" expand="lg">
       <Container fluid>
@@ -30,7 +30,7 @@ const NavBar = ({ setQuery }) => {
               Link
             </Nav.Link>
           </Nav>
-          <SearchBar setQuery={setQuery} />
+          <SearchBar setQuery={setQuery} setAllGames={setAllGames} />
         </Navbar.Collapse>
       </Container>
     </Navbar>
