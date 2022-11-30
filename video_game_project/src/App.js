@@ -2,6 +2,8 @@ import "./App.css";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Chart from "react-google-charts";
+import NavBar from "./Components/NavBar/NavBar";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [allGames, setAllGames] = useState([]);
@@ -132,6 +134,7 @@ function App() {
 
   return (
     <div>
+      <NavBar />
       <Chart
         chartType="Bar"
         width="100%"
