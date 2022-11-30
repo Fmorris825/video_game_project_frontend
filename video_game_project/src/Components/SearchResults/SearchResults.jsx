@@ -8,11 +8,11 @@ const SearchResults = ({ allGames, query }) => {
     let games;
     games = allGames.filter((game) => {
       if (
-        game.name.includes(query) ||
-        game.platform.includes(query) ||
+        game.name.toLowerCase().includes(query.toLowerCase()) ||
+        game.platform.toLowerCase().includes(query.toLowerCase()) ||
         game.year == query ||
-        game.genre.includes(query) ||
-        game.publisher.includes(query)
+        game.genre.toLowerCase().includes(query.toLowerCase()) ||
+        game.publisher.toLowerCase().includes(query.toLowerCase())
       ) {
         return true;
       } else {
