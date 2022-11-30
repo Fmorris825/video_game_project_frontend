@@ -108,53 +108,38 @@ function App() {
   }
 
   getGlobalSalesByPlatform();
-  console.log(`2600:${globalSales2600}`);
-  console.log(`3DS:${globalSales3DS}`);
-  console.log(`DC:${globalSalesDC}`);
-  console.log(`DS:${globalSalesDS}`);
-  console.log(`GB:${globalSalesGB}`);
-  console.log(`GBA:${globalSalesGBA}`);
-  console.log(`GC:${globalSalesGC}`);
-  console.log(`GEN:${globalSalesGEN}`);
-  console.log(`N64:${globalSalesN64}`);
-  console.log(`NES:${globalSalesNES}`);
-  console.log(`PC:${globalSalesPC}`);
-  console.log(`PS:${globalSalesPS}`);
-  console.log(`PS2:${globalSalesPS2}`);
-  console.log(`PS3:${globalSalesPS3}`);
-  console.log(`PS4:${globalSalesPS4}`);
-  console.log(`PSP:${globalSalesPSP}`);
-  console.log(`PSV:${globalSalesPSV}`);
-  console.log(`SAT:${globalSalesSAT}`);
-  console.log(`SNES:${globalSalesSNES}`);
-  console.log(`Wii:${globalSalesWii}`);
-  console.log(`WiiU:${globalSalesWiiU}`);
-  console.log(`X360:${globalSalesX360}`);
-  console.log(`XB:${globalSalesXB}`);
-  console.log(`XOne:${globalSalesXOne}`);
-  console.log(`TG16:${globalSalesTG16}`);
-  console.log(`SCD:${globalSalesSCD}`);
-  console.log(`WS:${globalSalesWS}`);
-  console.log(`NG:${globalSalesNG}`);
+
+  const data = [
+    ["Game Console", "Global Sales"],
+    ["PS4", globalSalesPS4],
+    ["XOne", globalSalesXOne],
+    ["3DS", globalSales3DS],
+    ["PS3", globalSalesPS3],
+    ["X360", globalSalesX360],
+    ["wiiU", globalSalesWiiU],
+    ["PC", globalSalesPC],
+    ["PSV", globalSalesPSV],
+    ["Wii", globalSalesWii],
+  ];
+
+  const options = {
+    chart: {
+      title: "Global Sales",
+      subtitlr: "of games",
+      legend: { position: "bottom" },
+    },
+  };
 
   return (
     <div>
-      {/* <Chart
-        chartType="LineChart"
-        data={[
-          ["Year", "Global Sales"],
-          allGames.map((game, index) => {
-            return [game.year, game.globalsales];
-          }),
-        ]}
-        width="400px"
+      <Chart
+        chartType="Bar"
+        width="100%"
         height="400px"
-        options={{ legend: { position: "bottom" } }}
-        legendToggle
-      /> */}
-      {/* {allGames.filter((game, index) => {
-        return;
-      })} */}
+        // legendToggle
+        data={data}
+        options={options}
+      />
       <h1>Hello World!</h1>
     </div>
   );
