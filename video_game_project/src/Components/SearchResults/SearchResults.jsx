@@ -1,6 +1,31 @@
 import { all } from "axios";
+import React, { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap";
 const SearchResults = ({ allGames, query }) => {
+  const [filteredGames, setFilteredGames] = useState([]);
+
+  function filterGames() {
+    let games;
+    games = allGames.filter((game) => {
+      if (
+        game.name.includes(query) ||
+        game.platform.includes(query) ||
+        game.year == query ||
+        game.genre.includes(query) ||
+        game.publisher.includes(query)
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    setFilteredGames(games);
+  }
+
+  useEffect(() => {
+    filterGames();
+  }, [query]);
+
   return (
     <div>
       Search dat shizzz
@@ -14,8 +39,8 @@ const SearchResults = ({ allGames, query }) => {
           </tr>
         </thead>
         <tbody>
-          {allGames.filter((game, index) => {
-            if (game.name.includes(query)) {
+          {filteredGames.map((game, index) => {
+            {
               return (
                 <tr key={index}>
                   <td>{game.name}</td>
