@@ -1,18 +1,8 @@
-import {
-  Nav,
-  Navbar,
-  Container,
-  NavLink,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap";
-import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
-import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
+import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import SearchBar from "../SearchBar/SearchBar";
 
-const NavBar = () => {
+const NavBar = ({ setQuery }) => {
   return (
     <Navbar bg="primary" expand="lg">
       <Container fluid>
@@ -40,15 +30,7 @@ const NavBar = () => {
               Link
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+          <SearchBar setQuery={setQuery} />
         </Navbar.Collapse>
       </Container>
     </Navbar>

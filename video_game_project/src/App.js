@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [allGames, setAllGames] = useState([]);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     getAllGames();
@@ -134,7 +135,7 @@ function App() {
 
   return (
     <div>
-      <NavBar />
+      <NavBar setQuery={setQuery} />
       <Chart
         chartType="Bar"
         width="100%"
@@ -143,7 +144,7 @@ function App() {
         data={data}
         options={options}
       />
-      <h1>Hello World!</h1>
+      <h1>{query}</h1>
     </div>
   );
 }
