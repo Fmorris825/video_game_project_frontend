@@ -1,14 +1,13 @@
 import GlobalSalesChart from "../GlobalSalesChart/GlobalSalesChart";
-import GlobalSales from "../GlobalSalesChart/GlobalSalesChart";
 import SearchResults from "../SearchResults/SearchResults";
-import UndeterminedChart from "../UndeterminedChart/UndetermindChart";
+import TopRankedPublishers from "../TopRankedPublishers/TopRankedPublishers";
 
 const Main = ({ allGames, query }) => {
   return (
     <div>
       Maynneee
       <GlobalSalesChart allGames={allGames} />
-      <UndeterminedChart />
+      <TopRankedPublishers allGames={allGames} />
       <SearchResults allGames={allGames} query={query} />
     </div>
   );
