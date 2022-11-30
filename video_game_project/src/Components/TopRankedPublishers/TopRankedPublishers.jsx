@@ -1,3 +1,5 @@
+import Chart from "react-google-charts";
+
 const TopRankedPublishers = ({ allGames }) => {
   function testTwoLists() {
     let publishers = [];
@@ -26,9 +28,45 @@ const TopRankedPublishers = ({ allGames }) => {
     }
   }
 
+  const data = [
+    ["Publishers", "Games in Top 100"],
+    ["Nintendo", 52],
+    ["Activision", 14],
+    ["Take-Two Interactive", 9],
+    ["Sony", 8],
+    ["EA", 5],
+    ["Microsoft GS", 2],
+    ["Atari", 1],
+    ["SquareSoft", 1],
+    ["Betheseda", 1],
+    ["Sega", 1],
+  ];
+
+  const options = {
+    chart: {
+      title: "Publishers with Top Ranked Games",
+      subtitle: "Top 100 Ranked Games",
+      legend: { position: "bottom" },
+      vAxis: {
+        title: "Ranked Games Count",
+      },
+    },
+  };
+
   testTwoLists();
 
-  return <div>We Be Chartin</div>;
+  return (
+    <div className="d-flex justify-content-center">
+      <Chart
+        chartType="Bar"
+        width="80%"
+        height="400px"
+        legendToggle
+        data={data}
+        options={options}
+      />
+    </div>
+  );
 };
 
 export default TopRankedPublishers;

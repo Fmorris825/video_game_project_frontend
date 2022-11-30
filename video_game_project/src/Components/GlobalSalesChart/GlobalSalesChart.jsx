@@ -112,19 +112,21 @@ const GlobalSalesChart = ({ allGames }) => {
   const options = {
     chart: {
       title: "Global Sales",
-      subtitlr: "of games",
+      subtitle: "of games",
       legend: { position: "bottom" },
+      vAxis: {
+        title: "Sales (in Millions)",
+      },
     },
   };
 
   return (
-    <div>
-      Globallla Sales
+    <div className="d-flex justify-content-center">
       <Chart
         chartType="Bar"
-        width="100%"
+        width="80%"
         height="400px"
-        // legendToggle
+        legendToggle
         data={data}
         options={options}
       />
