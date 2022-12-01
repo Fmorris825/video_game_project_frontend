@@ -37,6 +37,7 @@ const SearchResults = ({ allGames, query }) => {
             <th>Platform</th>
             <th>Release Year</th>
             <th>Publisher</th>
+            <th>Genre</th>
           </tr>
         </thead>
 
