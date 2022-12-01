@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import SelectedGameStats from "../SelectedGameStats/SelectedGameStats";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./SelectedGame.css";
 
 const SelectedGame = ({ game, index }) => {
   const [open, setOpen] = useState(false);
@@ -16,21 +18,41 @@ const SelectedGame = ({ game, index }) => {
         <td>{game.year}</td>
         <td>{game.publisher}</td>
         <td>{game.genre}</td>
-        <td colSpan={4}>
+        <td>
           <button onClick={toggleExpansion}>See Less</button>
         </td>
       </tr>
       <tr>
-        <td colSpan={3}>Game Rank: {game.game_rank}</td>
-        <td colSpan={3}>Global Sales: {game.globalsales}</td>
-      </tr>
-      <tr>
-        <td>
-          <b>N. American Sales:</b> {game.northamericasales}
+        <td colSpan={6}>
+          <div className="stats">
+            <div className="stat_line">
+              <div>
+                <b>Game Rank:</b> {game.game_rank}
+              </div>
+
+              <div>
+                <b>Global Sales:</b> {game.globalsales}
+              </div>
+            </div>
+            <div className="stat_line">
+              <div>
+                <b>N. American Sales:</b> {game.northamericasales}
+              </div>
+              |
+              <div>
+                <b>European Sales:</b> {game.europesales}
+              </div>
+              |
+              <div>
+                <b>Japanese Sales:</b> {game.japansales}
+              </div>
+              |
+              <div>
+                <b>Other Sales:</b> {game.othersales}
+              </div>
+            </div>
+          </div>
         </td>
-        <td>European Sales: {game.europesales}</td>
-        <td>Japanese Sales: {game.japansales}</td>
-        <td colSpan={3}>Other Sales: {game.othersales}</td>
       </tr>
     </tbody>
   ) : (
@@ -41,7 +63,7 @@ const SelectedGame = ({ game, index }) => {
         <td>{game.year}</td>
         <td>{game.publisher}</td>
         <td>{game.genre}</td>
-        <td colSpan={4}>
+        <td>
           <button onClick={toggleExpansion}>See More</button>
         </td>
       </tr>

@@ -1,0 +1,12 @@
+.stat_line {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stats {
+  border: 3px black solid;
+  background-color: royalblue;
+  border-radius: 3px;
+  margin-left: 350px;
+  margin-right: 350px;
+}

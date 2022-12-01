@@ -58,7 +58,6 @@ const TopRankedPublishers = ({ allGames }) => {
         chartType="Bar"
         width="80%"
         height="400px"
-        legendToggle
         data={data}
         options={options}
       />
