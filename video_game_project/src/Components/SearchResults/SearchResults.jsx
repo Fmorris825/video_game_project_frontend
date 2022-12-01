@@ -1,6 +1,6 @@
 import { all } from "axios";
 import React, { useEffect, useState } from "react";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Container } from "react-bootstrap";
 import SelectedGame from "../SelectedGame/SelectedGame";
 
 const SearchResults = ({ allGames, query }) => {
@@ -29,8 +29,8 @@ const SearchResults = ({ allGames, query }) => {
   }, [query]);
 
   return (
-    <div>
-      <Table striped>
+    <Container>
+      <Table>
         <thead>
           <tr>
             <th>Title</th>
@@ -38,6 +38,7 @@ const SearchResults = ({ allGames, query }) => {
             <th>Release Year</th>
             <th>Publisher</th>
             <th>Genre</th>
+            <th></th>
           </tr>
         </thead>
 
@@ -47,7 +48,7 @@ const SearchResults = ({ allGames, query }) => {
           }
         })}
       </Table>
-    </div>
+    </Container>
   );
 };
 

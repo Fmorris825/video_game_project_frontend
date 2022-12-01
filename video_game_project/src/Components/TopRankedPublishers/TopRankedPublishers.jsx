@@ -46,7 +46,10 @@ const TopRankedPublishers = ({ allGames }) => {
   //   }
   // }
 
-  const data = [["Publishers", { role: "style" }], ...publisherArrays];
+  const data = [
+    ["Publishers", "Games in Top 100", { role: "style" }],
+    ...publisherArrays,
+  ];
 
   const options = {
     chart: {

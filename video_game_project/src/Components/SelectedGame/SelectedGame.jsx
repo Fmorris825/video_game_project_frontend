@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import SelectedGameStats from "../SelectedGameStats/SelectedGameStats";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./SelectedGame.css";
+import { Container } from "react-bootstrap";
+import SalesbyConsoleModalChart from "../SalesbyConsoleModalChart/SalesbyConsoleModalChart";
 
 const SelectedGame = ({ game, index }) => {
   const [open, setOpen] = useState(false);
@@ -24,8 +26,8 @@ const SelectedGame = ({ game, index }) => {
       </tr>
       <tr>
         <td colSpan={6}>
-          <div className="stats">
-            <div className="stat_line">
+          <div className="stats d-flex flex-column p-2">
+            <Container className="stat_line d-flex align-items-center p-1">
               <div>
                 <b>Game Rank:</b> {game.game_rank}
               </div>
@@ -33,20 +35,21 @@ const SelectedGame = ({ game, index }) => {
               <div>
                 <b>Global Sales:</b> {game.globalsales}
               </div>
-            </div>
-            <div className="stat_line">
+              <SalesbyConsoleModalChart game={game} />
+            </Container>
+            <div className="stat_line p-1">
               <div>
                 <b>N. American Sales:</b> {game.northamericasales}
               </div>
-              |
+
               <div>
                 <b>European Sales:</b> {game.europesales}
               </div>
-              |
+
               <div>
                 <b>Japanese Sales:</b> {game.japansales}
               </div>
-              |
+
               <div>
                 <b>Other Sales:</b> {game.othersales}
               </div>

@@ -24,8 +24,6 @@ function App() {
     <div>
       <NavBar setQuery={setQuery} setAllGames={setAllGames} />
       <Main allGames={allGames} query={query} />
-
-      <p>End of Results</p> 
     </div>
   );
 }
