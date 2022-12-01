@@ -114,9 +114,9 @@ const GlobalSalesChart = ({ allGames }) => {
       title: "Global Sales",
       subtitle: "of games",
       legend: { position: "bottom" },
-      vAxis: {
-        title: "Sales (in Millions)",
-      },
+    },
+    vAxis: {
+      title: "Sales (in Millions)",
     },
   };
 

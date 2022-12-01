@@ -46,11 +46,8 @@ const TopRankedPublishers = ({ allGames }) => {
     chart: {
       title: "Publishers with Top Ranked Games",
       subtitle: "Top 100 Ranked Games",
-      legend: { position: "bottom" },
-      vAxis: {
-        title: "Ranked Games Count",
-      },
     },
+    legend: { position: "bottom" },
   };
 
   testTwoLists();

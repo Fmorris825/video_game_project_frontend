@@ -1,6 +1,8 @@
 import { all } from "axios";
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap";
+import SelectedGame from "../SelectedGame/SelectedGame";
+
 const SearchResults = ({ allGames, query }) => {
   const [filteredGames, setFilteredGames] = useState([]);
 
@@ -28,7 +30,6 @@ const SearchResults = ({ allGames, query }) => {
 
   return (
     <div>
-      Search dat shizzz
       <Table striped>
         <thead>
           <tr>
@@ -38,23 +39,12 @@ const SearchResults = ({ allGames, query }) => {
             <th>Publisher</th>
           </tr>
         </thead>
-        <tbody>
-          {filteredGames.map((game, index) => {
-            {
-              return (
-                <tr key={index}>
-                  <td>{game.name}</td>
-                  <td>{game.platform}</td>
-                  <td>{game.year}</td>
-                  <td>{game.publisher}</td>
-                  <td>
-                    <Button>View Stats</Button>
-                  </td>
-                </tr>
-              );
-            }
-          })}
-        </tbody>
+
+        {filteredGames.map((game, index) => {
+          {
+            return <SelectedGame game={game} index={index} />;
+          }
+        })}
       </Table>
     </div>
   );
