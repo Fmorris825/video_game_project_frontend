@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Chart from "react-google-charts";
 import PlatformList from "../PlatformList/PlatformList";
 import "./MostSuccessfulPublishers.css";
 
@@ -22,28 +23,66 @@ const MostSuccessfulPublishers = ({ allGames }) => {
     gamesByPlatform.map((game) => {
       if (game.publisher === distinctPublishers[i]) {
         publisherArrays[i][1] += game.globalsales;
-        publisherArrays[i].sort();
       }
     });
   }
+
+  let salesByPublisher = publisherArrays.map((array) => array[1]);
+  salesByPublisher.sort(function (a, b) {
+    return b - a;
+  });
+
+  let sortedPublishers = [];
+  sortedPublishers = salesByPublisher.map((sales) => {
+    for (let i = 0; i < publisherArrays.length; i++) {
+      if (
+        publisherArrays[i][1] === sales &&
+        !sortedPublishers.includes(publisherArrays[i][0])
+      ) {
+        return publisherArrays[i][0];
+      }
+    }
+  });
+
+  let topPublishersByConsole = [];
+  for (let i = 0; i < 7; i++) {
+    topPublishersByConsole.push([
+      sortedPublishers[i],
+      salesByPublisher[i],
+      "royalblue",
+    ]);
+  }
+
   const data = [
-    ["Publishers", "Games in Top 100", { role: "style" }],
-    ...publisherArrays,
+    ["Publishers", `Games Sold (in millions)`, { role: "style" }],
+    ...topPublishersByConsole,
   ];
-
-  // console.log(data);
-  // console.log("distinctPublishers", distinctPublishers);
-
-  // console.log("Games by Platform", gamesByPlatform);
-
-  console.log("Publisher Array", publisherArrays);
+  const options = {
+    chart: {
+      title: `Top 7 Publishers on ${selectedPlatform}`,
+      subtitle: "Based on # of Games Sold Globally",
+    },
+  };
 
   return (
     <div>
+      <div className="instruction-label">
+        Select a platform to see its most successful developers
+      </div>
       <div className="platform-list">
         <PlatformList
           platforms={distinctPlatforms}
+          selectedPlatform={selectedPlatform}
           setSelectedPlatform={setSelectedPlatform}
+        />
+      </div>
+      <div className="d-flex justify-content-center m-3 chart">
+        <Chart
+          chartType="Bar"
+          width="80%"
+          height="400px"
+          data={data}
+          options={options}
         />
       </div>
     </div>

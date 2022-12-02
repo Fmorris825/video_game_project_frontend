@@ -6,3 +6,9 @@ button {
   border-radius: 2px;
   border: black 1px solid;
 }
+
+.chart {
+  border-bottom: dashed royalblue 2px;
+  margin-bottom: 15px;
+  padding: 15px;
+}

@@ -6,3 +6,8 @@
     width: 80%;
     margin: auto;
 }
+
+.instruction-label{
+    text-align: center;
+    font-weight: bold;
+}

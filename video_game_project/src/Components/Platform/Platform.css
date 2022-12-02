@@ -1,3 +1,25 @@
-.platform-button:hover{
+.active:hover{
     cursor: pointer;    
+}
+
+.inactive:hover{
+    cursor: pointer;    
+}
+
+.active{
+    background-color: royalblue;
+    color: white;
+    border: solid 1px black;
+    border-radius: 3px;
+    width: calc(75vw / 14);
+    text-align: center;
+}
+
+.inactive{
+    color: black;
+    background-color: transparent;
+    border: solid 1px black;
+    border-radius: 3px;
+    width: calc(75vw / 14);
+    text-align: center;
 }
