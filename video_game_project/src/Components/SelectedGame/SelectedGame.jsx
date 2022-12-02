@@ -5,7 +5,7 @@ import "./SelectedGame.css";
 import { Container } from "react-bootstrap";
 import SalesbyConsoleModalChart from "../SalesbyConsoleModalChart/SalesbyConsoleModalChart";
 
-const SelectedGame = ({ game, index }) => {
+const SelectedGame = ({ game, index, filteredGames }) => {
   const [open, setOpen] = useState(false);
 
   function toggleExpansion() {
@@ -35,7 +35,10 @@ const SelectedGame = ({ game, index }) => {
               <div>
                 <b>Global Sales:</b> {game.globalsales}
               </div>
-              <SalesbyConsoleModalChart game={game} />
+              <SalesbyConsoleModalChart
+                game={game}
+                filteredGames={filteredGames}
+              />
             </Container>
             <div className="stat_line p-1">
               <div>
