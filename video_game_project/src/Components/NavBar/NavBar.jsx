@@ -9,7 +9,7 @@ const NavBar = ({ setQuery, setAllGames }) => {
         <Navbar.Brand href="#">GameData.TF</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Nav className="me-auto my-2 my-lg-0">
-          <Nav.Link href="#action1">Home</Nav.Link>
+          <Nav.Link href="">Home</Nav.Link>
         </Nav>
         <Container>
           <SearchBar setQuery={setQuery} setAllGames={setAllGames} />

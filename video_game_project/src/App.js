@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { all } from "axios";
 import React, { useState, useEffect } from "react";
 
 import NavBar from "./Components/NavBar/NavBar";
@@ -19,7 +19,7 @@ function App() {
     const response = await axios.get("http://localhost:8080/all");
     setAllGames(response.data);
   }
-
+  console.log(allGames);
   return (
     <div>
       <NavBar setQuery={setQuery} setAllGames={setAllGames} />

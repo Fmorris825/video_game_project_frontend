@@ -24,80 +24,16 @@ const SearchResults = ({ allGames, query }) => {
     });
     setFilteredGames(games);
   }
-  // console.log(filteredGames);
-
-  // for (let i = 0; i < filteredGames.length; i++) {
-  //   if (groupedGames.length === 0) {
-  //     setGroupedGames([filteredGames[i]]);
-  //   }
-  //   for (let i2 = 0; (i2 = groupedGames.length); i2++) {
-  //     if (
-  //       !(
-  //         groupedGames[i].name === filteredGames[i2] ||
-  //         groupedGames[i].name === filteredGames[i2 - 1]
-  //       )
-  //     ) {
-  //       setGroupedGames([...groupedGames, filteredGames[i]]);
-  //     }
-  //   }
-  // }
-
-  // filteredGames.map((parentGame) => {
-  //   if (groupedGames.length > 0) {
-  //     groupedGames.map((game) => {
-  //       if (game.name != parentGame.name || groupedGames.length == 0) {
-  //         console.log("I'm trying to add something new!");
-  //         let newGameObject = {
-  //           game_rank: parentGame.game_rank,
-  //           name: parentGame.name,
-  //           platforms: [parentGame.platform],
-  //           year: parentGame.year,
-  //           genre: parentGame.genre,
-  //           publisher: parentGame.publisher,
-  //           northamericasales: [parentGame.northamericasales],
-  //           europesales: [parentGame.europesales],
-  //           japansales: [parentGame.japansales],
-  //           othersales: [parentGame.othersales],
-  //           globalsales: [parentGame.globalsales],
-  //         };
-  //         groupedGames.push(newGameObject);
-  //       } else {
-  //         console.log("I'm trying to update something!");
-  //         game.platforms.push(parentGame.platform);
-  //         game.northamericasales.push(parentGame.northamericasales);
-  //         game.europesales.push(parentGame.europesales);
-  //         game.japansales.push(parentGame.japansales);
-  //         game.othersales.push(parentGame.othersales);
-  //         game.globalsales.push(parentGame.globalsales);
-  //       }
-  //     });
-  //   } else {
-  //     groupedGames.push({
-  //       game_rank: parentGame.game_rank,
-  //       name: parentGame.name,
-  //       platforms: [parentGame.platform],
-  //       year: parentGame.year,
-  //       genre: parentGame.genre,
-  //       publisher: parentGame.publisher,
-  //       northamericasales: [parentGame.northamericasales],
-  //       europesales: [parentGame.europesales],
-  //       japansales: [parentGame.japansales],
-  //       othersales: [parentGame.othersales],
-  //       globalsales: [parentGame.globalsales],
-  //     });
-  //     console.log(groupedGames);
-  //   }
-  // });
-
-  // console.log("groupedGames", groupedGames);
 
   useEffect(() => {
     filterGames();
   }, [query]);
 
+  console.log("filtered games:", filteredGames);
+
   return (
     <Container>
-      <Table>
+      <Table striped hover>
         <thead>
           <tr>
             <th>Title</th>

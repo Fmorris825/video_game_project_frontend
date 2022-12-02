@@ -28,7 +28,7 @@ const GlobalSalesChart = ({ allGames }) => {
   };
 
   return (
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center m-3">
       <Chart
         chartType="Bar"
         width="80%"
