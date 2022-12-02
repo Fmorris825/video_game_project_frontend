@@ -13,8 +13,10 @@ const MostSuccessfulPublishers = ({ allGames }) => {
       return true;
     }
   });
+  let publishers = gamesByPlatform.map((game) => game.publisher);
+  let distinctPublishers = [...new Set(publishers)];
 
-  console.log("gamesByPlatform", gamesByPlatform);
+  console.log("distinctPublishers", distinctPublishers);
 
   return (
     <div>
