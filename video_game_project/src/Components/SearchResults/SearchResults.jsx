@@ -5,8 +5,6 @@ import SelectedGame from "../SelectedGame/SelectedGame";
 const SearchResults = ({ allGames, query }) => {
   const [filteredGames, setFilteredGames] = useState([]);
 
-  let groupedGames = [];
-
   function filterGames() {
     let games;
     games = allGames.filter((game) => {
@@ -28,8 +26,6 @@ const SearchResults = ({ allGames, query }) => {
   useEffect(() => {
     filterGames();
   }, [query]);
-
-  console.log("filtered games:", filteredGames);
 
   return (
     <Container>
