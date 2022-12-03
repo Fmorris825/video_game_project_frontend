@@ -7,6 +7,8 @@
   border: 3px black solid;
   background-color: royalblue;
   border-radius: 3px;
-  margin-left: 300px;
-  margin-right: 300px;
+  width: calc(100vw - 600px);
+  margin: auto;
+  /* margin-left: 300px;
+  margin-right: 300px; */
 }

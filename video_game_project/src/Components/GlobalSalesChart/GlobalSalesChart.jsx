@@ -22,7 +22,7 @@ const GlobalSalesChart = ({ allGames }) => {
 
   const options = {
     chart: {
-      title: "Global sales of games by console",
+      title: "Number of Games Sold Globally by Console",
       subtitle: "Since 2013",
     },
   };

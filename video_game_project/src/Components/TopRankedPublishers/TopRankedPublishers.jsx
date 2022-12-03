@@ -26,8 +26,8 @@ const TopRankedPublishers = ({ allGames }) => {
 
   const options = {
     chart: {
-      title: "Publishers with Top Ranked Games",
-      subtitle: "Top 100 Ranked Games",
+      title: "Highest Ranked Publishers",
+      subtitle: "Based on # of Published Games Ranked in Top 100",
     },
     // legend: { position: "bottom" },
   };

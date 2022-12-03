@@ -67,7 +67,7 @@ const MostSuccessfulPublishers = ({ allGames }) => {
   return (
     <div>
       <div className="instruction-label">
-        Select a platform to see its most successful developers
+        <h3>Select A Platform to See Its Most Successful Publishers</h3>
       </div>
       <div className="platform-list">
         <PlatformList

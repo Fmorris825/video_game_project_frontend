@@ -31,17 +31,19 @@ const SalesbyConsoleModalChart = ({ game, filteredGames }) => {
 
   const options = {
     chart: {
-      title: "Global sales of games by console",
-      subtitle: "Since 2013",
+      title: "Total Games Sold Globally",
+      subtitle: "On Each Console ",
     },
   };
   return (
     <>
-      <button onClick={handleShow}>Visual Data</button>
+      <button onClick={handleShow}>
+        <b>Sales By Console</b>
+      </button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Sales by Console for {game.name}</Modal.Title>
+          <Modal.Title className="top-label">{game.name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {" "}
