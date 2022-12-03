@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Form, FormControl, Button } from "react-bootstrap";
 
-const SearchBar = ({ setQuery }) => {
+const SearchBar = ({ setQuery, useRef }) => {
   const [tempQuery, setTempQuery] = useState("");
 
   const onSubmit = (event) => {
@@ -14,13 +14,15 @@ const SearchBar = ({ setQuery }) => {
     <Form className="d-flex" onSubmit={onSubmit}>
       <FormControl
         type="search"
-        placeholder="Search Game Here"
+        placeholder="Search Games by Title, Platform, Release Year, Publisher, or Genre"
         className="me-2"
         aria-label="Search"
         onChange={(event) => setTempQuery(event.target.value)}
         value={tempQuery}
       />
-      <Button variant="light">Search</Button>
+      <a href="#Search Results">
+        <Button variant="light">Search</Button>
+      </a>
     </Form>
   );
 };

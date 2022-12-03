@@ -1,5 +1,5 @@
 import axios, { all } from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import NavBar from "./Components/NavBar/NavBar";
 import Main from "./Components/Main/Main";
@@ -10,6 +10,7 @@ import "./App.css";
 function App() {
   const [allGames, setAllGames] = useState([]);
   const [query, setQuery] = useState("");
+  const ref = useRef(null);
 
   useEffect(() => {
     getAllGames();

@@ -20,12 +20,12 @@ const SalesbyConsoleModalChart = ({ game, filteredGames }) => {
 
   let platforms = gameForChart.map((game) => game.platform);
   let platformArrays = gameForChart.map((game) => {
-    return [game.platform, game.globalsales, "royalblue"];
+    return [game.platform, game.globalsales * 1000000, "royalblue"];
   });
   console.log(platformArrays);
 
   const data = [
-    ["Game Sales by Platform", "Global Sales (in millions)", { role: "style" }],
+    ["Game Sales by Platform", "Global Sales", { role: "style" }],
     ...platformArrays,
   ];
 

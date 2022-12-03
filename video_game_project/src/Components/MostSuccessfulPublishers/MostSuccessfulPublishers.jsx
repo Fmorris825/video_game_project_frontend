@@ -8,6 +8,7 @@ const MostSuccessfulPublishers = ({ allGames }) => {
 
   let platforms = allGames.map((game) => game.platform);
   let distinctPlatforms = [...new Set(platforms)];
+  distinctPlatforms.sort();
 
   let gamesByPlatform = allGames.filter((game) => {
     if (game.platform === selectedPlatform) {
@@ -46,15 +47,17 @@ const MostSuccessfulPublishers = ({ allGames }) => {
 
   let topPublishersByConsole = [];
   for (let i = 0; i < 7; i++) {
-    topPublishersByConsole.push([
-      sortedPublishers[i],
-      salesByPublisher[i],
-      "royalblue",
-    ]);
+    if (sortedPublishers[i]) {
+      topPublishersByConsole.push([
+        sortedPublishers[i],
+        salesByPublisher[i] * 1000000,
+        "royalblue",
+      ]);
+    }
   }
 
   const data = [
-    ["Publishers", `Games Sold (in millions)`, { role: "style" }],
+    ["Publishers", `Games Sold`, { role: "style" }],
     ...topPublishersByConsole,
   ];
   const options = {

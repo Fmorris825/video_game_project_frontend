@@ -10,13 +10,13 @@ const GlobalSalesChart = ({ allGames }) => {
   for (let i = 0; i < distinctPlatforms.length; i++) {
     filteredGames.map((game) => {
       if (game.platform === distinctPlatforms[i]) {
-        platformArrays[i][1] += game.globalsales;
+        platformArrays[i][1] += game.globalsales * 1000000;
       }
     });
   }
 
   const data = [
-    ["Game Console", "Global Sales (in millions)", { role: "style" }],
+    ["Game Console", "Global Sales", { role: "style" }],
     ...platformArrays,
   ];
 

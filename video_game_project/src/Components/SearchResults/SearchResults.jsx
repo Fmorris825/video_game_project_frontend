@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Table, Button, Container } from "react-bootstrap";
 import SelectedGame from "../SelectedGame/SelectedGame";
 
-const SearchResults = ({ allGames, query }) => {
+const SearchResults = ({ allGames, query, ref }) => {
   const [filteredGames, setFilteredGames] = useState([]);
 
   function filterGames() {
@@ -28,12 +28,12 @@ const SearchResults = ({ allGames, query }) => {
   }, [query]);
 
   return (
-    <Container>
+    <Container ref={ref}>
       <Table striped hover>
         <thead>
           <tr>
             <th>Title</th>
-            <th>Platform(s)</th>
+            <th>Platform</th>
             <th>Release Year</th>
             <th>Publisher</th>
             <th>Genre</th>
@@ -42,15 +42,13 @@ const SearchResults = ({ allGames, query }) => {
         </thead>
 
         {filteredGames.map((game, index) => {
-          {
-            return (
-              <SelectedGame
-                game={game}
-                index={index}
-                filteredGames={filteredGames}
-              />
-            );
-          }
+          return (
+            <SelectedGame
+              game={game}
+              index={index}
+              filteredGames={filteredGames}
+            />
+          );
         })}
       </Table>
     </Container>
